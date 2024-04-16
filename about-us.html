@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Discover Our Story: Mama Flor's Lechon House</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="imagesource/logo.png">
+    </head>
+    <body onload="checkMonitorWidth(); resizeContents(); checkFooter()">
+        <div class="side-menu-icon" id="side-menu-icon" onclick="sideMenu()">
+            <img src="imagesource/menu.png">
+        </div>
+        <div class="side-menu-container" id="side-menu-container">
+            <div class="click-space" onclick="sideMenu()"></div>
+            <div class="home-side-menu-container">
+                <div class="home-side-menu">
+                    <a href="index.html">
+                        <h4>HOME</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="menu-side-menu-container">
+                <div class="menu-side-menu">
+                    <a href="menu.html">
+                        <h4>MENU</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="aboutus-side-menu-container">
+                <div class="aboutus-side-menu" style="background-color: white;">
+                    <h4 style="color: #004AAD;">ABOUT US</h4>
+                </div>
+            </div>
+            <div class="contactus-side-menu-container">
+                <div class="contactus-side-menu">
+                    <a href="contact-us.html">
+                        <h4>CONTACT US</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="banner" id="banner">
+            <div class="left-side" id="left-side">
+                <a href="index.html">
+                    <img id="left-side-img" src="imagesource/logo.png" alt="Mama Flor's Logo">
+                </a>
+            </div>
+            <div class="right-side" id="right-side">
+                <div class="homepage">
+                    <a href="index.html">
+                        <h4>HOME</h4>
+                    </a>
+                </div>
+                <div class="menupage">
+                    <a href="menu.html">
+                        <h4>MENU</h4>
+                    </a>
+                </div>
+                <div class="aboutuspage">
+                    <div style="position: absolute; width: 120px; height: 50px;
+                    left: 50%; top: 50%; transform: translate(-50%, -50%);
+                    border-radius: 50px; background-color: white;">
+                        <h4 style="color: #004AAD; left: 50%; transform: translate(-50%, -150%);">ABOUT US</h4>
+                    </div>
+                </div>
+                <div class="contactuspage">
+                    <a href="contact-us.html">
+                        <h4>CONTACT US</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="back-to-home-container">
+                <div class="back-to-home" id="back-to-home">
+                    <a href="index.html">
+                        <p>Back To Home</p>
+                    </a>
+                </div>
+            </div>
+            <div class="about-us-container">
+                <div class="about-us-header">
+                    <h2 style="font-family: ChunkFive; color: red; letter-spacing: 5px;">ABOUT US</h2>
+                </div>
+            </div>
+            <div class="introduction-container">
+                <div class="introduction-content-holder" id="introduction-content-holder">
+                    <div class="left-side-introduction" id="left-side-introduction">
+                        <img src="imagesource/intro.jpg">
+                    </div>
+                    <div class="right-side-introduction" id="right-side-introduction">
+                        <h2 style="font-family: ChunkFive; color: #004AAD; letter-spacing: 5px;">Introduction</h2>
+                        <p style="font-family:'Courier New', Courier, monospace; font-weight: bold;">Welcome to Mama Flor's Lechon House, where every bite tells a story of tradition, passion, and the vibrant flavors of the Philippines.
+                            Nestled in the heart of Tipolo, Tisa and Lapu-lapu,
+                            Mama Flor's is more than just a lechon house, it's a culinary sanctuary dedicated to the art of lechon, a beloved dish deeply rooted in Filipino culture. Mama Flor's has been a beacon for food lovers seeking an authentic taste of home, serving up succulent,
+                            golden-brown roasted chicken and pork that captivates the senses and ignites the soul.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mission-container">
+                <div class="mission-content-holder" id="mission-content-holder">
+                    <div class="left-side-mission" id="left-side-mission">
+                        <h2 style="font-family: ChunkFive; color: #004AAD; letter-spacing: 5px;">Mission</h2>
+                        <p style="font-family:'Courier New', Courier, monospace; font-weight: bold; text-indent: 20px;">To deliver an unparalleled culinary experience rooted in the rich traditions of Filipino cuisine.
+                            With our roasted chicken and pork, we strive to delight our customers with flavors that evoke memories of home-cooked meals and festive gatherings.</p>
+                    </div>
+                    <div class="right-side-mission" id="right-side-mission">
+                        <img src="imagesource/mission.jpg">
+                    </div>
+                    <div class="left-side-mission-hidden" id="left-side-mission-hidden">
+                        <h2 style="font-family: ChunkFive; color: #004AAD; letter-spacing: 5px;">Mission</h2>
+                        <p style="font-family:'Courier New', Courier, monospace; font-weight: bold;">To deliver an unparalleled culinary experience rooted in the rich traditions of Filipino cuisine.
+                            With our roasted chicken and pork, we strive to delight our customers with flavors that evoke memories of home-cooked meals and festive gatherings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vision-container">
+                <div class="vision-content-holder" id="vision-content-holder">
+                    <div class="left-side-vision" id="left-side-vision">
+                        <img src="imagesource/vision.jpg">
+                    </div>
+                    <div class="right-side-vision" id="right-side-vision">
+                        <h2 style="font-family: ChunkFive; color: #004AAD; letter-spacing: 5px;">Vision</h2>
+                        <p style="font-family:'Courier New', Courier, monospace; font-weight: bold;">To be the foremost destination for authentic Filipino roasted chicken and pork,
+                            renowned for our unwavering commitment to quality, innovation, and customer satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-bottom"></div>
+        </div>
+        <div class="footer">
+            <div class="footer-content-container" id="footer">
+                <div class="location-container" id="location-container">
+                    <h4>LOCATIONS</h4>
+                    <p>Tisa, Cebu City</p>
+                    <p>Tipolo, Mandaue City</p>
+                    <p>Basak, Lapu-Lapu City</p>
+                    <p1>Operated by Cebu Jeka Corporation</p1>
+                </div>
+                <div class="keep-in-touch-countainer" id="keep-in-touch-countainer">
+                    <h4>KEEP IN TOUCH</h4>
+                    <a href="https://www.facebook.com/profile.php?id=100063961540591">
+                        <img src="imagesource/facebook.png">
+                    </a>
+                </div>
+                <div class="quick-links-container" id="quick-links-container">
+                    <h4>QUICK LINKS</h4>
+                    <a href="index.html">
+                        <p>Home</p>
+                    </a>
+                    <a href="menu.html">
+                        <p>Menu</p>
+                    </a>
+                    <a href="about-us.html">
+                        <p>About us</p>
+                    </a>
+                    <a href="contact-us.html">
+                        <p>Contact us</p>
+                    </a>
+                </div>
+                <div class="order-now-container" id="order-now-container">
+                    <h4>ORDER NOW!</h4>
+                    <p>+63 962 207 9430</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+    <script src="about-us.js"></script>
+</html>
