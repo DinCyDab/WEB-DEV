@@ -49,6 +49,12 @@ a{
     display: flex;
     border-radius: 50px;
     /* border: 1px red solid; */
+    transition: all .2s ease;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.home-side-menu:hover{
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .home-side-menu a{
@@ -61,6 +67,12 @@ a{
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all .2s ease;
+    color: white;
+}
+
+.home-side-menu:hover h4{
+    color: #004AAD;
 }
 
 .menu-side-menu-container{
@@ -85,6 +97,12 @@ a{
     display: flex;
     border-radius: 50px;
     /* border: 1px red solid; */
+    transition: all .2s ease;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.menu-side-menu:hover{
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .menu-side-menu h4{
@@ -92,6 +110,12 @@ a{
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all .2s ease;
+    color: white;
+}
+
+.menu-side-menu:hover h4{
+    color: #004AAD;
 }
 
 .aboutus-side-menu-container{
@@ -111,6 +135,12 @@ a{
     display: flex;
     border-radius: 50px;
     /* border: 1px red solid; */
+    transition: all .2s ease;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.aboutus-side-menu:hover{
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .aboutus-side-menu a{
@@ -123,6 +153,12 @@ a{
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all .2s ease;
+    color: white;
+}
+
+.aboutus-side-menu:hover h4{
+    color: #004AAD;
 }
 
 .contactus-side-menu-container{
@@ -142,6 +178,12 @@ a{
     display: flex;
     border-radius: 50px;
     /* border: 1px red solid; */
+    transition: all .2s ease;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.contactus-side-menu:hover{
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .contactus-side-menu a{
@@ -154,6 +196,12 @@ a{
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all .2s ease;
+    color: white;
+}
+
+.contactus-side-menu:hover h4{
+    color: #004AAD;
 }
 
 .side-menu-icon{
@@ -213,12 +261,35 @@ a{
     height: 100px;
 }
 
+.homepage-container{
+    position: relative;
+    width: 60%;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.homepage-container:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+
 .homepage h4{
     position: absolute;
     text-align: center;
     top: 50%;
     transform: translate(0%, -150%);
     width: 100%;
+    color: white;
+    transition: all .2s ease;
+}
+
+.homepage-container:hover h4 {
+    color: #004AAD;
 }
 
 .menupage{
@@ -227,12 +298,35 @@ a{
     height: 100px;
 }
 
+.menupage-container{
+    position: relative;
+    width: 60%;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.menupage-container:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+
 .menupage h4{
     position: absolute;
     text-align: center;
     top: 50%;
     transform: translate(0%, -150%);
     width: 100%;
+    color: white;
+    transition: all .2s ease;
+}
+
+.menupage-container:hover h4{
+    color: #004AAD;
 }
 
 .aboutuspage{
@@ -241,12 +335,35 @@ a{
     height: 100px;
 }
 
+.aboutuspage-container{
+    position: relative;
+    width: 60%;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.aboutuspage-container:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+
 .aboutuspage h4{
     position: absolute;
     text-align: center;
     top: 50%;
     transform: translate(0%, -150%);
     width: 100%;
+    color: white;
+    transition: all .2s ease;
+}
+
+.aboutuspage-container:hover h4{
+    color: #004AAD;
 }
 
 .contactuspage{
@@ -255,12 +372,35 @@ a{
     height: 100px;
 }
 
+.contactuspage-container{
+    position: relative;
+    width: 60%;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.contactuspage-container:hover{
+    background-color: rgba(255, 255, 255, 1);
+}
+
 .contactuspage h4{
     position: absolute;
     text-align: center;
     top: 50%;
     transform: translate(0%, -150%);
     width: 100%;
+    color: white;
+    transition: all .2s ease;
+}
+
+.contactuspage-container:hover h4{
+    color: #004AAD;
 }
 
 h4{

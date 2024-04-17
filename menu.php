@@ -7,89 +7,11 @@
         <link rel="icon" href="imagesource/logo.png">
     </head>
     <body onload="checkMonitorWidth(); checkContent(); porkCheckContent(); springRollCheckContent(); othersCheckContent(); locateContents(); categoryDesign(); checkWidth(); checkFooter(); monitorCheck()">
-        <div class="click-to-zoom" id="click-to-zoom">
-            <div class="close-button-container" id="close-button-container" onclick="closeZoom()">
-                <img onclick="closeZoom()" src="imagesource/close.png">
-            </div>
-            <div class="content-container" id="content-container">
-                <div class="left-side-container" id="left-side-container">
-                    <img id="image-source" src="imagesource/roasted-chicken.jpg">
-                </div>
-                <div class="right-side-container" id="right-side-container">
-                    <h2 id="header-name">Header</h2>
-                    <h3 id="price-info">Price</h3>
-                    <p>Item details:</p>
-                    <p id="item-info"></p>
-                    <h6>To Place Your Order: Dial<space style="color:red"> +63 962 207 9430 </space>or visit our nearest
-                        <a style="color: red; cursor: pointer; text-decoration: underline;" href="index.html#located-content-locator" id="click-branch">branch</a>
-                        (10:00AM - 7:00PM)</h6>
-                </div>
-            </div>
-            <div class="space-bottom-close" onclick="closeZoom()"></div>
-        </div>
-        <div class="side-menu-icon" id="side-menu-icon" onclick="sideMenu()">
-            <img src="imagesource/menu.png">
-        </div>
-        <div class="side-menu-container" id="side-menu-container">
-            <div class="click-space" onclick="sideMenu()"></div>
-            <div class="home-side-menu-container">
-                <div class="home-side-menu">
-                    <a href="index.html">
-                        <h4>HOME</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="menu-side-menu-container">
-                <div class="menu-side-menu"  style="background-color: white;">
-                    <h4 style="color: #004AAD;">MENU</h4>
-                </div>
-            </div>
-            <div class="aboutus-side-menu-container">
-                <div class="aboutus-side-menu">
-                    <a href="about-us.html">
-                        <h4>ABOUT US</h4>
-                    </a>
-                </div>
-            </div>
-            <div class="contactus-side-menu-container">
-                <div class="contactus-side-menu">
-                    <a href="contact-us.html">
-                        <h4>CONTACT US</h4>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="banner" id="banner">
-            <div class="left-side" id="left-side">
-                <a href="index.html">
-                    <img id="left-side-img" src="imagesource/logo.png" alt="Mama Flor's Logo">
-                </a>
-            </div>
-            <div class="right-side" id="right-side">
-                <div class="homepage">
-                    <a href="index.html">
-                        <h4>HOME</h4>
-                    </a>
-                </div>
-                <div class="menupage">
-                    <div style="position: absolute; width: 120px; height: 50px;
-                    left: 50%; top: 50%; transform: translate(-50%, -50%);
-                    border-radius: 50px; background-color: white;">
-                        <h4 style="color: #004AAD; left: 50%; transform: translate(-50%, -150%);">MENU</h4>
-                    </div>
-                </div>
-                <div class="aboutuspage">
-                    <a href="about-us.html">
-                        <h4>ABOUT US</h4>
-                    </a>
-                </div>
-                <div class="contactuspage">
-                    <a href="contact-us.html">
-                        <h4>CONTACT US</h4>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <?php
+            include "click-to-zoom.php";
+            include "sidemenu.php";
+            include "banner.php";
+        ?>
         <div class="category-container" id="category-container">
             <div class="banana-leaf-3"></div>
             <div class="banana-leaf-4"></div>
@@ -117,7 +39,7 @@
         <div class="content">
             <div class="back-to-home-container-menu">
                 <div class="back-to-home-menu" id="back-to-home-menu">
-                    <a href="index.html">
+                    <a href="index.php">
                         <p>Back To Home</p>
                     </a>
                 </div>
@@ -224,42 +146,9 @@
             </div>
             <div class="space-bottom"></div>
         </div>
-        <div class="footer">
-            <div class="footer-content-container" id="footer">
-                <div class="location-container" id="location-container">
-                    <h4>LOCATIONS</h4>
-                    <p>Tisa, Cebu City</p>
-                    <p>Tipolo, Mandaue City</p>
-                    <p>Basak, Lapu-Lapu City</p>
-                    <p1>Operated by Cebu Jeka Corporation</p1>
-                </div>
-                <div class="keep-in-touch-countainer" id="keep-in-touch-countainer">
-                    <h4>KEEP IN TOUCH</h4>
-                    <a href="https://www.facebook.com/profile.php?id=100063961540591">
-                        <img src="imagesource/facebook.png">
-                    </a>
-                </div>
-                <div class="quick-links-container" id="quick-links-container">
-                    <h4>QUICK LINKS</h4>
-                    <a href="index.html">
-                        <p>Home</p>
-                    </a>
-                    <a href="menu.html">
-                        <p>Menu</p>
-                    </a>
-                    <a href="about-us.html">
-                        <p>About us</p>
-                    </a>
-                    <a href="contact-us.html">
-                        <p>Contact us</p>
-                    </a>
-                </div>
-                <div class="order-now-container" id="order-now-container">
-                    <h4>ORDER NOW!</h4>
-                    <p>+63 962 207 9430</p>
-                </div>
-            </div>
-        </div>
+        <?php
+            include "footer.php";
+        ?>
     </body>
     <script src="script.js"></script>
     <script src="menu-script.js"></script>
