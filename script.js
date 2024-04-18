@@ -10,7 +10,7 @@ function checkMonitorWidth(){
     var leftSideImg = document.getElementById("left-side-img");
     var sideMenuIcon = document.getElementById("side-menu-icon");
     var sideMenuContainer = document.getElementById("side-menu-container");
-    if(width < 1000){
+    if(width < 1100){
         leftSide.style.width = "100%";
         leftSide.style.marginLeft = "0px";
         leftSideImg.style.position = "absolute";

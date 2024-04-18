@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Discover Our Story: Mama Flor's Lechon House</title>
-        <link rel="stylesheet" href="style.css">
         <link rel="icon" href="imagesource/logo.png">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body onload="checkMonitorWidth(); resizeContents(); checkFooter()">
         <?php

@@ -251,13 +251,13 @@ a{
     width: 70%;
     height: 100px;
     right: 0;
-    margin-right: 100px;
+    /* margin-right: 100px; */
     display: flex;
 }
 
 .homepage{
     position: relative;
-    width: 25%;
+    width: 20%;
     height: 100px;
 }
 
@@ -294,7 +294,7 @@ a{
 
 .menupage{
     position: relative;
-    width: 25%;
+    width: 20%;
     height: 100px;
 }
 
@@ -331,7 +331,7 @@ a{
 
 .aboutuspage{
     position: relative;
-    width: 25%;
+    width: 20%;
     height: 100px;
 }
 
@@ -368,7 +368,7 @@ a{
 
 .contactuspage{
     position: relative;
-    width: 25%;
+    width: 20%;
     height: 100px;
 }
 
@@ -405,6 +405,32 @@ a{
 
 h4{
     color: white;
+}
+
+.accountsettings{
+    position: relative;
+    width: 20%;
+    height: 100px;
+}
+
+.accountsettings-container{
+    position: relative;
+    width: 60%;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all .2s ease;
+}
+
+.accountsettings-container img{
+    position: relative;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    cursor: pointer;
 }
 
 .content{
@@ -2159,4 +2185,107 @@ h4{
 
 .form-submit-holder input:hover{
     border: 2px red solid;
+}
+/* ACCOUNT SETTINGS DESIGN */
+
+.hidden-profile{
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    background-color: #004AAD;
+    opacity: 0;
+    transition: all .1s ease;
+    pointer-events: none;
+    right: 0;
+}
+
+.hidden-username{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.hidden-username-left{
+    width: 42%;
+}
+
+.hidden-username-left h4{
+    line-height: 0px;
+}
+
+.hidden-username-right{
+    width: 57%;
+}
+
+.hidden-username-right input{
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+.hidden-password{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.hidden-password-left{
+    width: 42%;
+}
+
+.hidden-password-left h4{
+    line-height: 0px;
+}
+
+.hidden-password-right{
+    width: 57%;
+}
+
+.hidden-password-right input{
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+.hidden-submit{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.submit-left{
+    width: 70%;
+    padding: 5px;
+}
+
+.submit-left a{
+    color: white;
+    text-decoration: underline;
+}
+
+.submit-right{
+    width: 30%;
+    padding: 5px;
+}
+
+.hidden-submit-button{
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    color: white;
+    text-decoration: underline;
 }
