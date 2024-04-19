@@ -36,39 +36,12 @@
                 </a>
             </div>
         </div>
-        <div class="accountsettings">
-            <div class="accountsettings-container">
-                <img src="imagesource/profile-icon.png" onclick="showHidden()">
+        <div class="loginpage">
+            <div class="loginpage-container" onclick="window.location.href='login.php'">
+                <a href="login.php">
+                    <h4>LOGIN</h4>
+                </a>
             </div>
-            <form class="hidden-profile" id="hidden-profile">
-                <div class="hidden-username">
-                    <div class="hidden-username-left">
-                        <h4>Username:</h4>
-                    </div>
-                    <div class="hidden-username-right">
-                        <input type="text" name="username" required>
-                    </div>
-                </div>
-                <div>
-                    <div class="hidden-password">
-                        <div class="hidden-password-left">
-                            <h4>Password:</h4>
-                        </div>
-                        <div class="hidden-password-right">
-                            <input type="password" name="password" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden-submit">
-                    <div class="submit-left">
-                        <a href="create-account.php">Create Account</a>
-                    </div>
-                    <div class="submit-right">
-                        <input class="hidden-submit-button" type="submit" value="Sign in">
-                    </div>  
-                </div>
-            </form>
         </div>
     </div>
 </div>
-<script src="account-settings.js"></script>

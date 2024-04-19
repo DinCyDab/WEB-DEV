@@ -8,7 +8,7 @@
     </head>
     <body onload="checkMonitorWidth(); checkContent(); porkCheckContent(); springRollCheckContent(); othersCheckContent(); locateContents(); categoryDesign(); checkWidth(); checkFooter(); monitorCheck()">
         <?php
-            include "click-to-zoom.php";
+            include "click-to-zoom-menu.php";
             include "sidemenu.php";
             include "banner.php";
         ?>

@@ -17,7 +17,7 @@
                 </div>
             </div>
             <h6>To Place Your Order: Dial<space style="color:red"> +63 962 207 9430 </space>or visit our nearest
-                <a style="color: red; cursor: pointer; text-decoration: underline;" onclick="goToBranch(); closeZoom()">branch</a>
+                <a style="color: red; cursor: pointer; text-decoration: underline;" href="index.php#located-content-locator">branch</a>
                 (10:00AM - 7:00PM)</h6>
         </div>
     </div>
