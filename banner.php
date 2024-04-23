@@ -1,3 +1,12 @@
+<?php
+    if(!isset($_SESSION["started"])){
+        session_start();
+    }
+    if(isset($_SESSION["firstname"])){
+        $firstname = $_SESSION["firstname"];
+    }
+?>
+
 <div class="side-menu-icon" id="side-menu-icon" onclick="sideMenu()">
     <img src="imagesource/menu.png">
 </div>
@@ -37,9 +46,33 @@
             </div>
         </div>
         <div class="loginpage">
-            <div class="loginpage-container" onclick="window.location.href='login.php'">
-                <a href="login.php">
-                    <h4>LOGIN</h4>
+            <div class="loginpage-container"
+                onclick='window.location.href="
+                <?php
+                    if(isset($firstname)){
+                        echo "account-settings.php";
+                    }
+                    else{
+                        echo "login.php";
+                    }
+                ?>"'>
+                <a href="<?php
+                            if(isset($firstname)){
+                                echo "account-settings.php";
+                            }
+                            else{
+                                echo "login.php";
+                            }
+                        ?>">
+                    <h4>
+                        <?php if(isset($firstname)){
+                                echo $firstname;
+                            }
+                            else{
+                                echo "LOGIN";
+                            }
+                        ?>
+                    </h4>
                 </a>
             </div>
         </div>
