@@ -77,48 +77,77 @@
     include "sidemenu.php";
     include "banner.php";
   ?>
+  <?php 
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $username = $_POST["username"];
+      $firstname = $_POST["firstname"];
+      $lastname = $_POST["lastname"];
+      $email = $_POST["email"];
+      $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+      $contactnumber = $_POST["contactnumber"];
+      $address = $_POST["address"];
+
+      $createdAccount = false;
+
+      $conn = mysqli_connect("localhost","root","","mamaflors");
+      if ($conn->connect_error) {
+          die("ERROR". $conn->connect_error);
+      }
+      else{
+          $sql = "SELECT * FROM user WHERE username='$username'";
+          $result = $conn->query($sql);
+          if ($result->num_rows > 0) {
+              include "add-account.php";
+              
+          }
+          else{
+              $sql = "INSERT INTO user(username, firstname, lastname, email, cpassword, contactnumber, caddress)
+              VALUES ('$username', '$firstname', '$lastname', '$email', '$password', '$contactnumber', '$address');";
+              $conn->query($sql);
+              $createdAccount = true;
+              include "created-account-successfully.php";
+          }
+      }
+
+      $conn->close();
+    }
+  ?>
     <div class="content-create">
         <div class="auth-form">
             <h2 class="create-account-header">CREATE ACCOUNT</h2>
-            <form action="add-account.php" method="post" name="myform" onsubmit="return passwordVerify()">
+            <form method="post" name="myform" onsubmit="return passwordVerify()">
               <div class="form-field">
                 <label for="user_name">Username</label>
-                <input class="text-input" type="text" name="username" id="user_name">
+                <input class="text-input" type="text" name="username" required>
               </div>
               <div class="form-field">
-                <label for="user_name">First Name</label>
-                <input class="text-input" type="text" name="firstname" id="first_name">
+                <label for="user_firstname">First Name</label>
+                <input class="text-input" type="text" name="firstname"  required>
               </div>
               <div class="form-field">
-                <label for="user_username">Last name</label>
-                <input class="text-input" type="text" name="lastname" id="user_username">
+                <label for="user_lastname">Last name</label>
+                <input class="text-input" type="text" name="lastname" required>
               </div>
               <div class="form-field">
                 <label for="user_email">Email</label>
-                <input class="text-input" type="email" name="email" id="user_email">
+                <input class="text-input" type="email" name="email" required>
               </div>
               <div class="form-field">
                 <label for="user_password">Password</label>
-                <input class="text-input" type="password" name="password" id="user_password">
+                <input class="text-input" type="password" name="password" required>
               </div>
               <div class="form-field">
                 <label for="user_password">Confirm Password</label>
-                <input class="text-input" type="password" name="confirmpass" id="user_password">
+                <input class="text-input" type="password" name="confirmpass" required>
               </div>
               <div class="form-field">
                 <label for="user_contact">Contact Number</label>
-                <input class="text-input" type="tel" name="contactnumber" id="user_contact">
+                <input class="text-input" type="tel" name="contactnumber" required>
               </div>
               <div class="form-field">
                 <label for="user_address">Address</label>
-                <textarea class="text-input" name="address" id="user_address" rows="3"></textarea>
+                <textarea class="text-input" name="address" rows="3" required></textarea>
               </div>
-              <!-- <div class="form-field">
-                <label class="checkbox">
-                  <input type="checkbox" name="terms">
-                  I agree to the <a href="/terms">terms of service</a>
-                </label>
-              </div> -->
               <div class="form-btns">
                 <input class="btn2" type="submit" value="Create">
               </div>
@@ -142,7 +171,6 @@
                 alert("PASSWORD DID NOT MATCH");
                 return false;
             }
-            alert("PASSWORD UPDATED SUCCESSFULLY");
         }
     </script>
 </body>

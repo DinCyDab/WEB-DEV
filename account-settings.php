@@ -47,14 +47,14 @@
                                 <br>
                             </div>
                             <div class="left-container">
+                                <label for="address">Address:</label><br>
+                                <input type="address" id="address" name="address"style="pointer-events: none;"  value="<?php echo "$address"?>"><br>
+                                <br>
                                 <label for="new-password">New Password:</label><br>
                                 <input type="password" id="new-password" name="newpassword" required><br>
                                 <br>
                                 <label for="confirm-password">Confirm Password:</label><br>
                                 <input type="password" id="confirm-password" name="confirmpass" required><br>
-                                <br>
-                                <label for="address">Address:</label><br>
-                                <input type="address" id="address" name="address"style="pointer-events: none;"  value="<?php echo "$address"?>"><br>
                                 <br>
                                 <div class="submit-button">
                                     <input type="submit" value="Update">

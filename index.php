@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION["started"])){
+        session_start();
+        $_SESSION["started"] = true;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>

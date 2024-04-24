@@ -1,3 +1,14 @@
+<?php
+    if(!isset($_SESSION["started"])){
+        session_start();
+        $_SESSION["started"] = true;
+    }
+
+    if(isset($_SESSION["loggedin"])){
+        header("Location: index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,6 +76,52 @@
         </style>
     </head>
     <body onload="checkMonitorWidth(); checkFooter()">
+        <?php 
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                $username = $_POST["username"];
+                $password = $_POST["password"];
+
+                $conn = mysqli_connect("localhost","root","","mamaflors");
+                $canLogIn = false;
+                $noAccount = false;
+
+                if ($conn->connect_error) {
+                    die("ERROR". $conn->connect_error);
+                }
+                else{
+                    $sql = "SELECT * FROM user
+                            WHERE username = '$username';";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        if(password_verify($password, $row["cpassword"])) {
+                            $canLogIn = true;
+                        }
+                    }
+                    else{
+                        $noAccount = true;
+                        include "error.php";
+                    }
+                    
+                    if($canLogIn == true){
+                        $_SESSION["username"] = $row["username"];
+                        $_SESSION["firstname"] = $row["firstname"];
+                        $_SESSION["lastname"] = $row["lastname"];
+                        $_SESSION["email"] = $row["email"];
+                        $_SESSION["contactnumber"] = $row["contactnumber"];
+                        $_SESSION["address"] = $row["caddress"];
+                        $_SESSION["loggedin"] = true;
+                        header("Location: index.php");
+                        exit;
+                    }
+                    elseif($noAccount == false){
+                        include "wrongpass.php";
+                    }
+                }
+                $conn->close();
+            }
+        ?>
         <?php
             include "sidemenu.php";
             include "banner.php";
@@ -72,7 +129,7 @@
         <div class="content" style="padding-top:150px; padding-bottom:250px">
             <div class="login-container">
                 <h2 class="login">LOGIN</h2>
-                <form action="verify-account.php" method="post">
+                <form method="post" onsubmit="return verifyAccount()">
                     <div class="input-group">
                         <label for="username">Username:</label>
                         <input type="text" id="username" name="username" required>

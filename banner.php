@@ -1,11 +1,52 @@
 <?php
     if(!isset($_SESSION["started"])){
         session_start();
+        $_SESSION["started"] = true;
     }
+
     if(isset($_SESSION["firstname"])){
         $firstname = $_SESSION["firstname"];
     }
+
+    if(isset($firstname)){
+        $user = "onclick='showHiddenProfile();'";
+        $noHide = "";
+    }
+    else{
+        $user = "onclick=\"window.location.href='login.php'\"";
+        $noHide = "login.php";
+    }
 ?>
+
+<style>
+    .hidden-profile-container{
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 0%);
+        width: 200px;
+        height: auto;
+        background-color: #004AAD;
+        display: none;
+    }
+
+    .hidden-profile{
+        width: 100%;
+        height: auto;
+        /* background-color: green; */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .hidden-profile a{
+        position: relative;
+        top: 50%;
+        transform: translate(0%, -50%);
+        margin: 0;
+        color: white;
+        text-decoration: underline;
+    }
+</style>
 
 <div class="side-menu-icon" id="side-menu-icon" onclick="sideMenu()">
     <img src="imagesource/menu.png">
@@ -46,24 +87,8 @@
             </div>
         </div>
         <div class="loginpage">
-            <div class="loginpage-container"
-                onclick='window.location.href="
-                <?php
-                    if(isset($firstname)){
-                        echo "account-settings.php";
-                    }
-                    else{
-                        echo "login.php";
-                    }
-                ?>"'>
-                <a href="<?php
-                            if(isset($firstname)){
-                                echo "account-settings.php";
-                            }
-                            else{
-                                echo "login.php";
-                            }
-                        ?>">
+            <div class="loginpage-container" <?php echo $user ?>>
+                <a <?php echo $noHide ?>>
                     <h4>
                         <?php if(isset($firstname)){
                                 echo $firstname;
@@ -75,6 +100,31 @@
                     </h4>
                 </a>
             </div>
+            <div class="hidden-profile-container" id="hidden-profile-container">
+                <div class="hidden-profile" id="account-details">
+                    <a href="account-settings.php">Account Settings</a>
+                </div>
+                <div class="hidden-profile" id="cart-details">
+                    <a href="cart.php">Cart</a>
+                </div>
+                <div class="hidden-profile" id="log-out">
+                    <a href="log-out.php">Log out</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+    var isHidden = true;
+    function showHiddenProfile(){
+        var hiddenProfileContainer = document.getElementById("hidden-profile-container");
+        if(isHidden){
+            hiddenProfileContainer.style.display = "block";
+        }
+        else{
+            hiddenProfileContainer.style.display = "none";
+        }
+        isHidden = !isHidden;
+    }
+</script>

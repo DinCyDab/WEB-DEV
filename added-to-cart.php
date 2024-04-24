@@ -1,6 +1,6 @@
 <div class="background-error-container" id="background-error-container" onclick="closeError()">
     <div class="error-container">
-        <h4>USERNAME ALREADY EXIST</h4>
+        <h4>ADDED TO CART SUCCESSFULLY</h4>
         <p>click anywhere to close</p>
     </div>
 </div>
@@ -32,6 +32,7 @@
         top: 50%;
         transform: translate(0%, -50%);
         font-family: ChunkFive;
+        letter-spacing: 2px;
     }
     .error-container p{
         text-decoration: underline;

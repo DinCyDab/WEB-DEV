@@ -1,6 +1,6 @@
 <div class="background-error-container" id="background-error-container" onclick="closeError()">
     <div class="error-container">
-        <h4>USERNAME ALREADY EXIST</h4>
+        <h4>NO USERNAME FOUND</h4>
         <p>click anywhere to close</p>
     </div>
 </div>
