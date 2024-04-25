@@ -2,7 +2,7 @@
     session_start();
     $_SESSION["started"] = true;
     $username = $_SESSION["username"];
-    $firstname = $_SESSION["firstname"];
+    $Afirstname = $_SESSION["firstname"];
     $lastname = $_SESSION["lastname"];
     $email = $_SESSION["email"];
     $contactnumber = $_SESSION["contactnumber"];
@@ -34,7 +34,7 @@
                                 <input type="first-name" id="first-name" name="username" value="<?php echo "$username"?>"><br>
                                 <br>
                                 <label for="first-name">First Name:</label><br>
-                                <input type="first-name" id="first-name" name="first-name" value="<?php echo "$firstname"?>"><br>
+                                <input type="first-name" id="first-name" name="first-name" value="<?php echo "$Afirstname"?>"><br>
                                 <br>
                                 <label for="last-name">Last Name:</label><br>
                                 <input type="last-name" id="last-name" name="last-name" value="<?php echo "$lastname"?>"><br>
@@ -60,9 +60,6 @@
                                     <input type="submit" value="Update">
                                 </div>
                                 <br>
-                                <div>
-                                    <a href="log-out.php">LOG OUT</a>
-                                </div>
                             </div>
                     </form>
                 </div>

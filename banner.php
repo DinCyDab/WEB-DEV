@@ -5,7 +5,7 @@
     }
 
     if(isset($_SESSION["firstname"])){
-        $firstname = $_SESSION["firstname"];
+        $firstname = $_SESSION["firstname"] . " <sub>▼</sub>";
     }
 
     if(isset($firstname)){
@@ -36,9 +36,12 @@
         /* background-color: green; */
         text-align: center;
         margin-bottom: 20px;
+        padding-bottom: 5px;
+        padding-top: 10px;
     }
 
     .hidden-profile a{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         position: relative;
         top: 50%;
         transform: translate(0%, -50%);
@@ -104,8 +107,11 @@
                 <div class="hidden-profile" id="account-details">
                     <a href="account-settings.php">Account Settings</a>
                 </div>
+                <div class="hidden-profile" id="redeem-rewards">
+                    <a href="underconstruction.php">Redeem Rewards</a>
+                </div>
                 <div class="hidden-profile" id="cart-details">
-                    <a href="cart.php">Cart</a>
+                    <a href="underconstruction.php">Check Cart</a>
                 </div>
                 <div class="hidden-profile" id="log-out">
                     <a href="log-out.php">Log out</a>

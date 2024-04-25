@@ -6,7 +6,7 @@
     if(isset($_SESSION['firstname'])){
         $username = "ADD TO CART";
         $setRef = "";
-        $setInput = "<input type='number'>";
+        $setInput = "<input type='number' value='1'>";
     }
     else{
         $username = "SIGN IN TO ORDER";

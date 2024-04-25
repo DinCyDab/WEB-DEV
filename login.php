@@ -30,15 +30,6 @@
                 border-radius: 50px;
             }
 
-            .create-account-link {
-                text-decoration: none;
-                text-decoration: underline;
-            }
-            
-            .btn-signin {
-                    
-            }
-
         .login{
             text-align: center;
             font-family: ChunkFive;
@@ -144,9 +135,18 @@
                         <input class="btn-signin" type="submit" value="Sign in" class="btn">
                     </div>
                 </form>
-                <div class="create-account-container">
-                    <p>No account?</p>
-                    <a href="create-account.php" class="create-account-link">Create Account</a>
+                <div class="bottom-container">
+                    <div class="right-side-login">
+                        <div class="create-account-container">
+                            <a href="underconstruction.php">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="left-side-login">
+                        <div class="create-account-container">
+                            <p>No account?</p>
+                            <a href="create-account.php">Create Account</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -158,3 +158,42 @@
     <script src="click-to-zoom.js"></script>
     <script src="go-to-branch.js"></script>
 </html>
+
+<style>
+    .bottom-container{
+        width: 100%;
+        height: auto;
+        /* border: 1px red solid; */
+        display: flex;
+    }
+
+    .left-side-login{
+        width: 50%;
+        height: auto;
+        margin-left: 20px;
+        /* border: 1px black solid; */
+    }
+
+    .left-side-login p{
+        text-align: left;
+    }
+
+    .left-side-login a{
+        text-decoration: underline;
+        float: left;
+    }
+
+    .right-side-login{
+        width: 50%;
+        height: auto;
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+
+    .right-side-login a{
+        text-decoration: underline;
+        float: right;
+    }
+
+    
+</style>
