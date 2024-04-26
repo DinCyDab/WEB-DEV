@@ -111,7 +111,7 @@
                     <a href="underconstruction.php">Redeem Rewards</a>
                 </div>
                 <div class="hidden-profile" id="cart-details">
-                    <a href="underconstruction.php">Check Cart</a>
+                    <a href="cart.php">Check Cart</a>
                 </div>
                 <div class="hidden-profile" id="log-out">
                     <a href="log-out.php">Log out</a>

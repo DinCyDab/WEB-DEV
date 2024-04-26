@@ -3,6 +3,21 @@
         session_start();
         $_SESSION["started"] = true;
     }
+
+    $conn = mysqli_connect("localhost","root","","mamaflors");
+    if($conn->connect_error){
+        die("ERROR". $conn->connect_error);
+    }
+    else{
+        $sql = "SELECT * FROM product";
+        $result = $conn->query($sql);
+        $row = array();
+        if($result->num_rows > 0){
+            $row = $result->fetch_all();
+        }
+        
+    }
+    $conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -42,36 +57,32 @@
                         </div>
                     </div>
                     <div class="home-menu-image-container">
-                        <div class="chicken-image-holder-1" id="chicken-image-holder-1" style="font-family: ChunkFive;" onclick="zoomClicked('Roasted Chicken', '₱270.00','imagesource/roasted-chicken.jpg',
-                        'Indulge in the mouthwatering delight of our Roasted Chicken, featuring succulent meat infused with aromatic herbs and spices, all encased in a crispy golden-brown skin.')">
-                            <div class="chicken-image-holder" id="chicken-image-1"></div>
+                        <div class="chicken-image-holder-1" id="chicken-image-holder-1" style="font-family: ChunkFive;" onclick="zoomClicked('<?php echo $row[0][1]?>', '₱<?php echo $row[0][3]?>.00', 'imagesource/roasted-chicken.jpg', '<?php echo $row[0][2]?>', '<?php echo $row[0][0]?>')">
+                            <div class="chicken-image-holder" id="chicken-image-1" name="test"></div>
                             <div class="chicken-description">
-                                <p style="color: red;">Roasted Chicken</p>
-                                <p style="color: #004AAD;">₱270.00</p>
+                                <p style="color: red;"><?php echo $row[0][1] ?></p>
+                                <p style="color: #004AAD;">₱<?php echo $row[0][3]?>.00</p>
                             </div>
                         </div>
-                        <div class="pork-image-holder-1" id="pork-image-holder-1" style="font-family: ChunkFive;" onclick="zoomClicked('Liempo', '₱280.00', 'imagesource/pork-liempo.jpg',
-                        'Embark on a culinary journey with our Grilled Liempo, where the pork belly is meticulously marinated in a secret blend of herbs and spices, then grilled to perfection, delivering a tantalizing harmony of flavors and textures that redefine the essence of indulgence.')">
+                        <div class="pork-image-holder-1" id="pork-image-holder-1" style="font-family: ChunkFive;" onclick="zoomClicked('<?php echo $row[3][1] ?>', '₱<?php echo $row[3][3] ?>.00', 'imagesource/pork-liempo.jpg', '<?php echo $row[3][2] ?>', '<?php echo $row[3][0]?>')">
                             <div class="pork-image-holder" id="pork-image-1"></div>
                             <div class="pork-description">
-                                <p style="color: red;">Liempo</p>
-                                <p style="color: #004AAD;">₱280.00</p>
+                                <p style="color: red;"><?php echo $row[3][1] ?></p>
+                                <p style="color: #004AAD;">₱<?php echo $row[3][3]?>.00</p>
                             </div>
                         </div>
-                        <div class="spring-roll-image-holder-1" id="spring-roll-image-holder-1" style="font-family: ChunkFive;" onclick="zoomClicked('Chicken Spring Roll', '₱10.00/pc', 'imagesource/spring-roll.jpg',
-                        'Delight in the crispy perfection of our Spring Rolls, where a delicate blend of fresh vegetables, savory meats, and aromatic spices is enveloped in a light, golden-brown wrapper, creating a delectable fusion of flavors and textures that promises an unforgettable experience with every bite.')">
+                        <div class="spring-roll-image-holder-1" id="spring-roll-image-holder-1" style="font-family: ChunkFive;" onclick="zoomClicked('<?php echo $row[6][1] ?>', '₱<?php echo $row[6][3] ?>.00/pc', 'imagesource/spring-roll.jpg', '<?php echo $row[6][2] ?>', '<?php echo $row[6][0]?>')">
                             <div class="spring-roll-image-holder" id="spring-roll-image-1"></div>
                             <div class="spring-roll-description">
-                                <p style="color: red;">Chicken Spring Roll</p>
-                                <p style="color: #004AAD;">₱10.00/pc</p>
+                                <p style="color: red;"><?php echo $row[6][1] ?></p>
+                                <p style="color: #004AAD;">₱<?php echo $row[6][3]?>.00/pc</p>
                             </div>
                         </div>
-                        <div class="pork-image-holder-1" id="pork-image-holder-2" style="font-family: ChunkFive;" onclick="zoomClicked('Pork Sisig', '₱250.00', 'imagesource/pork-sisig.jpg',
-                        'Experience the fiery zest of our Pork Sisig, a masterpiece bursting with bold flavors and tender pork, meticulously seasoned and sizzled to perfection, offering a tantalizing symphony of taste and texture that will leave you craving for more.')">
+                        <div class="pork-image-holder-1" id="pork-image-holder-2" style="font-family: ChunkFive;" onclick="zoomClicked('<?php echo $row[5][1] ?>', '₱<?php echo $row[5][3] ?>.00', 'imagesource/pork-sisig.jpg', '<?php echo $row[5][2] ?>', '<?php echo $row[5][0]?>')">
                             <div class="pork-image-holder" id="pork-image-3"></div>
                             <div class="pork-description">
-                                <p style="color: red;">Pork Sisig</p>
-                                <p style="color: #004AAD;">₱250.00</p>
+                                <p style="color: red;"><?php echo $row[5][1] ?></p>
+                                <p style="color: #004AAD;">₱<?php echo $row[5][3]?>.00</p>
                             </div>
                         </div>
                     </div>

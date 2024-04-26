@@ -1,3 +1,26 @@
+<?php
+    if(!isset($_SESSION["started"])){
+        session_start();
+        $_SESSION["started"] = true;
+    }
+
+    $conn = mysqli_connect("localhost","root","","mamaflors");
+    if($conn->connect_error){
+        die("ERROR". $conn->connect_error);
+    }
+    else{
+        $sql = "SELECT * FROM product";
+        $result = $conn->query($sql);
+        $row = array();
+        if($result->num_rows > 0){
+            $row = $result->fetch_all();
+        }
+
+        
+    }
+    $conn->close();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +31,7 @@
     </head>
     <body onload="checkMonitorWidth(); checkContent(); porkCheckContent(); springRollCheckContent(); othersCheckContent(); locateContents(); categoryDesign(); checkWidth(); checkFooter(); monitorCheck()">
         <?php
-            include "click-to-zoom-menu.php";
+            include "click-to-zoom.php";
             include "sidemenu.php";
             include "banner.php";
         ?>
@@ -50,24 +73,22 @@
                         <h2 style="font-family: ChunkFive; letter-spacing: 5px;">Chicken</h2>
                     </div>
                     <div class="chicken-holder-container" id="chicken-holder">
-                        <div class="chicken-image-holder-1" id="chicken-image-holder-1" onclick="zoomClicked('Roasted Chicken', '₱270.00','imagesource/roasted-chicken.jpg',
-                        'Indulge in the mouthwatering delight of our Roasted Chicken, featuring succulent meat infused with aromatic herbs and spices, all encased in a crispy golden-brown skin.')">
+                        <div class="chicken-image-holder-1" id="chicken-image-holder-1" onclick="zoomClicked('<?php echo $row[0][1] ?>', '₱<?php echo $row[0][3] ?>.00','imagesource/roasted-chicken.jpg', '<?php echo $row[0][2] ?>', '<?php echo $row[0][0] ?>')">
                             <div class="chicken-image-holder" id="chicken-image-1"></div>
                             <div class="chicken-description">
-                                <p style="color: red;">Roasted Chicken</p>
-                                <p style="color: #004AAD;">₱270.00</p>
+                                <p style="color: red;"><?php echo $row[0][1] ?></p>
+                                <p style="color: #004AAD;">₱<?php echo $row[0][3] ?>.00</p>
                             </div>
                         </div>
-                        <div class="chicken-image-holder-1" id="chicken-image-holder-2" onclick="zoomClicked('Chicken Sisig', '₱250.00', 'imagesource/chicken-sisig.jpg',
-                        'Savor the irresistible fusion of savory spices and tender chicken pieces in our Chicken Sisig, expertly crafted to deliver a burst of flavor in every bite, making it the ultimate choice for a delightful meal experience.')">
+                        <div class="chicken-image-holder-1" id="chicken-image-holder-2" onclick="zoomClicked('<?php echo $row[1][1] ?>', '₱<?php echo $row[1][3] ?>.00', 'imagesource/chicken-sisig.jpg', '<?php echo $row[1][2] ?>', '<?php echo $row[1][0] ?>')">
                             <div class="chicken-image-holder" id="chicken-image-2"></div>
                             <div class="chicken-description">
-                                <p style="color: red;">Chicken Sisig</p>
-                                <p style="color: #004AAD;">₱250.00</p>
+                            <p style="color: red;"><?php echo $row[1][1] ?></p>
+                                <p style="color: #004AAD;">₱<?php echo $row[1][3] ?>.00</p>
                             </div>
                         </div>
                         <div class="chicken-image-holder-1" id="chicken-image-holder-3" onclick="zoomClicked('Fried Chicken', '₱40.00/pc', 'imagesource/fried-chicken-1.jpg',
-                        'Experience the crispy indulgence of our Fried Chicken, boasting a golden-brown crust that encases tender, juicy meat, seasoned to perfection with a tantalizing blend of herbs and spices, promising a delightful culinary delight for any mealtime.')">
+                        'Experience the crispy indulgence of our Fried Chicken, boasting a golden-brown crust that encases tender, juicy meat, seasoned to perfection with a tantalizing blend of herbs and spices, promising a delightful culinary delight for any mealtime.', '<?php echo $row[2][0] ?>')">
                             <div class="chicken-image-holder" id="chicken-image-3"></div>
                             <div class="chicken-description">
                                 <p style="color: red;">Fried Chicken</p>
@@ -84,7 +105,7 @@
                     </div>
                     <div class="pork-holder-container" id="pork-holder-container">
                         <div class="pork-image-holder-1" id="pork-image-holder-1" onclick="zoomClicked('Liempo', '₱280.00', 'imagesource/pork-liempo.jpg',
-                        'Embark on a culinary journey with our Grilled Liempo, where the pork belly is meticulously marinated in a secret blend of herbs and spices, then grilled to perfection, delivering a tantalizing harmony of flavors and textures that redefine the essence of indulgence.')">
+                        'Embark on a culinary journey with our Grilled Liempo, where the pork belly is meticulously marinated in a secret blend of herbs and spices, then grilled to perfection, delivering a tantalizing harmony of flavors and textures that redefine the essence of indulgence.', '<?php echo $row[3][0] ?>')">
                             <div class="pork-image-holder" id="pork-image-1"></div>
                             <div class="pork-description">
                                 <p style="color: red;">Liempo</p>
@@ -92,7 +113,7 @@
                             </div>
                         </div>
                         <div class="pork-image-holder-1" id="pork-image-holder-2" onclick="zoomClicked('Pork Belly', '₱900.00/kg', 'imagesource/pork-belly.jpg',
-                        'Indulge in pure satisfaction with our Pork Belly, featuring premium cuts of succulent pork belly, expertly seasoned and slow-cooked to perfection, ensuring every bite is a savory delight that embodies comfort and taste in its simplest, yet most exquisite form.')">
+                        'Indulge in pure satisfaction with our Pork Belly, featuring premium cuts of succulent pork belly, expertly seasoned and slow-cooked to perfection, ensuring every bite is a savory delight that embodies comfort and taste in its simplest, yet most exquisite form.', '<?php echo $row[4][0] ?>')">
                             <div class="pork-image-holder" id="pork-image-2"></div>
                             <div class="pork-description">
                                 <p style="color: red;">Pork Belly</p>
@@ -100,7 +121,7 @@
                             </div>
                         </div>
                         <div class="pork-image-holder-1" id="pork-image-holder-3" onclick="zoomClicked('Pork Sisig', '₱250.00', 'imagesource/pork-sisig.jpg',
-                        'Experience the fiery zest of our Pork Sisig, a masterpiece bursting with bold flavors and tender pork, meticulously seasoned and sizzled to perfection, offering a tantalizing symphony of taste and texture that will leave you craving for more.')">
+                        'Experience the fiery zest of our Pork Sisig, a masterpiece bursting with bold flavors and tender pork, meticulously seasoned and sizzled to perfection, offering a tantalizing symphony of taste and texture that will leave you craving for more.', '<?php echo $row[5][0] ?>')">
                             <div class="pork-image-holder" id="pork-image-3"></div>
                             <div class="pork-description">
                                 <p style="color: red;">Pork Sisig</p>
@@ -117,7 +138,7 @@
                     </div>
                     <div class="spring-roll-holder-container" id="spring-roll-holder-container">
                         <div class="spring-roll-image-holder-1" id="spring-roll-image-holder-1" onclick="zoomClicked('Chicken Spring Roll', '₱10.00/pc', 'imagesource/spring-roll.jpg',
-                        'Delight in the crispy perfection of our Spring Rolls, where a delicate blend of fresh vegetables, savory meats, and aromatic spices is enveloped in a light, golden-brown wrapper, creating a delectable fusion of flavors and textures that promises an unforgettable experience with every bite.')">
+                        'Delight in the crispy perfection of our Spring Rolls, where a delicate blend of fresh vegetables, savory meats, and aromatic spices is enveloped in a light, golden-brown wrapper, creating a delectable fusion of flavors and textures that promises an unforgettable experience with every bite.', '<?php echo $row[6][0] ?>')">
                             <div class="spring-roll-image-holder" id="spring-roll-image-1"></div>
                             <div class="spring-roll-description">
                                 <p style="color: red;">Chicken Spring Roll</p>
@@ -134,7 +155,7 @@
                     </div>
                     <div class="others-holder-container" id="others-holder-container">
                         <div class="others-image-holder-1" id="others-image-holder-1" onclick="zoomClicked('Atchara', '₱40.00/250g', 'imagesource/atchara.png',
-                        'Elevate your palate with our tangy and refreshing Atchara, a Filipino delicacy meticulously crafted from crisp green papaya, carrots, and bell peppers, delicately pickled in a sweet and tangy blend of vinegar and spices, delivering a burst of vibrant flavors that perfectly complement any meal.')">
+                        'Elevate your palate with our tangy and refreshing Atchara, a Filipino delicacy meticulously crafted from crisp green papaya, carrots, and bell peppers, delicately pickled in a sweet and tangy blend of vinegar and spices, delivering a burst of vibrant flavors that perfectly complement any meal.', '<?php echo $row[7][0] ?>')">
                             <div class="others-image-holder" id="others-image-1"></div>
                             <div class="others-description">
                                 <p style="color: red;">Atchara</p>
