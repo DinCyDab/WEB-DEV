@@ -1,6 +1,6 @@
 <div class="background-error-container" id="background-error-container" onclick="closeError()">
     <div class="error-container">
-        <h4>WRONG PASSWORD</h4>
+        <h4>ENTRY DENIED</h4>
         <p>click anywhere to close</p>
     </div>
 </div>

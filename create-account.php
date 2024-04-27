@@ -98,7 +98,6 @@
           $result = $conn->query($sql);
           if ($result->num_rows > 0) {
               include "add-account.php";
-              
           }
           else{
               $sql = "INSERT INTO user(username, firstname, lastname, email, cpassword, contactnumber, caddress)
@@ -108,7 +107,6 @@
               include "created-account-successfully.php";
           }
       }
-
       $conn->close();
     }
   ?>

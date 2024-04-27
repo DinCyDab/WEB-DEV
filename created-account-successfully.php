@@ -1,6 +1,6 @@
 <div class="background-error-container" id="background-error-container" onclick="closeError()">
     <div class="error-container">
-        <h4>CREATED ACCOUNT SUCCESSFULLY</h4>
+        <h4>ACCOUNT CREATED SUCCESSFULLY</h4>
         <p>click anywhere to close</p>
     </div>
     <a href="login.php" style="text-decoration='underline'">Sign in now</a>
