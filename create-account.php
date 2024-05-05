@@ -31,7 +31,11 @@
     }
 
     .form-field {
+      position: relative;
       margin-bottom: 20px;
+      width: 90%;
+      left: 50%;
+      transform: translate(-52%, 0%);
     }
 
     .text-input {
@@ -48,6 +52,9 @@
       text-decoration: none;
       border-radius: 10px;
       transition: background-color 0.3s ease;
+      position: relative;
+      left: 100%;
+      transform: translate(-340%, 0px);
     }
 
     .btn2:hover {
@@ -72,7 +79,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="checkMonitorWidth(); resizeCreateAccount()">
   <?php
     include "sidemenu.php";
     include "banner.php";
@@ -96,8 +103,11 @@
       else{
           $sql = "SELECT * FROM user WHERE username='$username'";
           $result = $conn->query($sql);
-          if ($result->num_rows > 0) {
+          if($result->num_rows > 0) {
               include "add-account.php";
+          }
+          elseif(!preg_match('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/', $email)){
+              include "invalid-email.php";
           }
           else{
               $sql = "INSERT INTO user(username, firstname, lastname, email, cpassword, contactnumber, caddress)
@@ -111,7 +121,7 @@
     }
   ?>
     <div class="content-create">
-        <div class="auth-form">
+        <div class="auth-form" id="auth-form">
             <h2 class="create-account-header">CREATE ACCOUNT</h2>
             <form method="post" name="myform" onsubmit="return passwordVerify()">
               <div class="form-field">
@@ -146,13 +156,13 @@
                 <label for="user_address">Address</label>
                 <textarea class="text-input" name="address" rows="3" required></textarea>
               </div>
-              <div class="form-btns">
+              <div style="display:flex" class="form-field">
+                <div class="auth-link">
+                  Already have an account? <a href="login.php">Sign in</a>
+                </div>
                 <input class="btn2" type="submit" value="Create">
               </div>
             </form>
-            <div class="auth-link">
-              Already have an account? <a href="login.php">Sign in</a>
-            </div>
         </div>
     </div>
     <?php
@@ -162,13 +172,40 @@
     <script src="click-to-zoom.js"></script>
     <script src="go-to-branch.js"></script>
     <script>
-        function passwordVerify(){
+        function verifyPhone(phoneNum){
+            var pattern = /^\d{11}$/;
+            return pattern.test(phoneNum);
+        }
+
+        function passwordVerify() {
             var newPass = document.forms["myform"]["password"].value;
             var conPass = document.forms["myform"]["confirmpass"].value;
-            if(newPass != conPass){
+            var phoneNum = document.forms["myform"]["contactnumber"].value;
+
+            if(!verifyPhone(phoneNum)) {
+                alert("INVALID PHONE NUMBER");
+                return false;
+            }
+            
+            if(newPass != conPass) {
                 alert("PASSWORD DID NOT MATCH");
                 return false;
             }
+        }
+    </script>
+    <script>
+        window.addEventListener("resize", resizeCreateAccount);
+        var width = window.innerWidth;
+
+        function resizeCreateAccount(){
+          width = window.innerWidth;
+          var authForm = document.getElementById("auth-form");
+          if(width < 1000){
+            authForm.style.width = "100%";
+          }
+          else{
+            authForm.style.width = "50%";
+          }
         }
     </script>
 </body>

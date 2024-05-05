@@ -15,7 +15,7 @@
     if(isset($_SESSION['firstname'])){
         $username = "<form class=\"form-sign-in\" method=\"post\">
         <div class=\"sign-in-left\">
-            <input class=\"input-number\" id=\"input-number\" type=\"number\" min=\"0\" max=\"50\" value=\"1\" name=\"qty\">
+            <input class=\"input-number\" id=\"input-number\" type=\"number\" min=\"1\" max=\"50\" value=\"1\" name=\"qty\">
         </div>
         <div class=\"sign-in-right\">
             <input class=\"add-to-cart-button\" id=\"add-to-cart-button\" type=\"submit\" value=\"ADD TO CART\" name=\"default\">

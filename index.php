@@ -1,3 +1,7 @@
+<?php 
+    include "createdatabase.php";
+?>
+
 <?php
     if(!isset($_SESSION["started"])){
         session_start();

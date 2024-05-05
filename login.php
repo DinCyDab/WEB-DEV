@@ -1,3 +1,7 @@
+<?php 
+    include "createdatabase.php";
+?>
+
 <?php
     if(!isset($_SESSION["started"])){
         session_start();
@@ -46,7 +50,7 @@
         .input-group-sign{
             position: relative;
             /* border: 1px red solid; */
-            width: 35%;
+            width: 100%;
             height: auto;
             left: 50%;
             transform: translate(-50%, 0%);
@@ -54,8 +58,8 @@
 
         .input-group-sign input{
             position: relative;
-            left: 50%;
-            transform: translate(-50%, 0%);
+            left: 15%;
+            /* transform: translate(-150%, 0%); */
             background-color: #004AAD;
             color: white;
             border-radius: 50px;
@@ -63,7 +67,11 @@
             cursor: pointer;
             padding: 10px;
         }
-            
+        
+        .input-group{
+            position: relative;
+        }
+
         </style>
     </head>
     <body onload="checkMonitorWidth(); checkFooter()">
@@ -96,12 +104,14 @@
                     }
                     
                     if($canLogIn == true){
+                        $_SESSION["userID"] = $row["userID"];
                         $_SESSION["username"] = $row["username"];
                         $_SESSION["firstname"] = $row["firstname"];
                         $_SESSION["lastname"] = $row["lastname"];
                         $_SESSION["email"] = $row["email"];
                         $_SESSION["contactnumber"] = $row["contactnumber"];
                         $_SESSION["address"] = $row["caddress"];
+                        $_SESSION["rewardpoints"] = $row["rewardpoints"];
                         $_SESSION["loggedin"] = true;
                         header("Location: index.php");
                         exit;

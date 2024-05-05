@@ -1,3 +1,7 @@
+<?php 
+    include "createdatabase.php";
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
